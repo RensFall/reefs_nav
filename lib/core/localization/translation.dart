@@ -1,0 +1,80 @@
+import 'package:get/get.dart';
+
+class MyTranslation extends Translations {
+  @override
+  // TODO: implement keys
+  Map<String, Map<String, String>> get keys => {
+        "Arabic": {
+          "1": "اختر اللغة",
+          "2": "مرحبا بعودتك",
+          "3": //body intro
+              "قم بالتسجيل عن طريق رقم الهاتف و كلمة المرور او أستمر عبر احد حسابات التواصل الاجتماعي",
+          "4": "رقم الهاتف",
+          "5": "كلمة المرور",
+          "6": "أدخل البريد الالكتروني",
+          "7": "أدخل كلمة المرور",
+          "8": "هل نسيت كلمة المرور؟",
+          "9": "تسجيل الدخول",
+          "10": "ليس لديك حساب ؟",
+          "11": "تسجيل",
+          "12": "لديك حساب بالفعل؟ ",
+          "13": "أعد كتابة كلمة المرور",
+          "14": "تأكيد كلمة المرور",
+          "15": "الاسم الاول",
+          "16": "ادخل اسمك الاول",
+          "18": "ادخل اسمك الاخير",
+          "19": "نسيت بيانات الدخول",
+          "20": "تحقق",
+          "21": "تحقق من الرقم",
+          "22": "الاسم الكامل",
+          "23": "حذف",
+          "24": "إنضم",
+          "25": "",
+          "26": "تسجيل خروج",
+          "27": "تعديل الصفحة الشخصية",
+          "28": "الصفحة الشخصية",
+          "29": "التحقق الرمز",
+          "30": "الرجاء ادخال الرموز المرسلة لايميلك",
+        },
+        "English": {
+          "1": "Choose Language",
+          "2": "Welcome Back,",
+          "3":
+              "Sign In With Your Phone number And Password \n Or Continue With social Media ",
+          "4": "Phone number",
+          "5": "Password",
+          "6": "Enter Your Email",
+          "7": "Enter Your Password",
+          "8": "Forgot Password?",
+          "9": "Sign In",
+          "10": "Dont have an Account? ",
+          "11": "Sign Up",
+          "12": "Already have an Account? ",
+          "13": "Re Enter Your Password",
+          "14": "Confirm Password",
+          "15": "First Name",
+          "16": "Enter Your First Name",
+          "17": "Last Name",
+          "18": "Enter Your Last Name",
+          "19": "Forgot Password",
+          "20": "Confirm ",
+          "21": "Check Phone Number",
+          "22": "FullName",
+          "23": "Delete",
+          "24": "Joined",
+          "25": "3 March 2023",
+          "26": "Logout",
+          "27": "Edit Profile",
+          "28": "Profile",
+          "29": "Check Code",
+          "30": "Please Enter the Digit Code Sent To Your Email",
+          "31": "Reset Password",
+          "32": "Enter New Password",
+          "33": "Confirm New Password",
+          "34": "Reset Your Password",
+          "35": "",
+
+
+        }
+      };
+}
