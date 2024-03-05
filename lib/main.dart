@@ -1,28 +1,29 @@
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
 import 'package:get/get.dart';
+import 'package:path/path.dart';
 import 'package:reefs_nav/core/constant/color.dart';
 import 'package:reefs_nav/core/services/services.dart';
 import 'core/localization/changelocalization.dart';
 import 'core/localization/translation.dart';
+import 'core/services/tileManager/TileProviderModel.dart';
 import 'routes.dart';
 import 'firebase_options.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
-  await initialService();
-  runApp(const MyApp());
   await Firebase.initializeApp(
     options: DefaultFirebaseOptions.currentPlatform,
   );
+  await initialService();
+  runApp(
+    ChangeNotifierProvider(
+      create: (context) => TileProviderModel(),
+      child: const MyApp(),
+    ),
+  );
 }
-//----HEADSUP--------000000where to add this one ? here or in homepage.dart??0000000000-----HEADSUP------- 
-//-----------NOTICE---homepage.dart is where our map will be represented--------------NOTICE
-//------------------------------------------------------------------------------
-//                          ChangeNotifierProvider(
-//                              create: (context) => TileProviderModel(),
-//                              child: const MainApp(), ),
-//------------------------------------------------------------------------------
 
 class MyApp extends StatelessWidget {
   const MyApp({super.key});

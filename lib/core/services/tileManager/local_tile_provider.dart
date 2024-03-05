@@ -5,11 +5,9 @@
 import 'dart:convert';
 import 'dart:io';
 import 'dart:typed_data';
-
 import 'package:flutter/material.dart';
 import 'package:flutter_map/flutter_map.dart';
 import 'package:reefs_nav/core/services/tileManager/TileProviderModel.dart';
-
 import 'store_tiles.dart';
 
 class LocalTileProvider extends TileProvider {

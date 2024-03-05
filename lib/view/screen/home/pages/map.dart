@@ -51,8 +51,8 @@ class _MapPageState extends State<MapPage> {
       body: FlutterMap(
         mapController: mapController,
         options: MapOptions(
-          initialCenter: currentLocation ??
-              LatLng(20.0, 38.0), // Initial center of the map
+          //initialCenter: currentLocation ??
+          //  LatLng(20.0, 38.0), // Initial center of the map
           initialZoom: 15.0, // Initial zoom level
         ), // MapOptions
         children: [
