@@ -1,13 +1,7 @@
 # reefs_nav
-
-A new Flutter project.
-
-## Getting Started
-
-This project is a starting point for a Flutter application.
-
-A few resources to get you started if this is your first Flutter project:
-
+!!!!!!!!!!!!!!!!!!!!!================================================================================!!!!!!!!!!!!!!!!!!!!!!
+NOTE: the Flutter Version of the lates commit is running on Flutter Version: ![Flutter Version](https://img.shields.io/badge/flutter-v3.19.2-blue)
+!!!!!!!!!!!!!!!!!!!!!================================================================================!!!!!!!!!!!!!!!!!!!!!!
 - [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
 - [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
 
