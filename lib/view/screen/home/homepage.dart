@@ -4,6 +4,7 @@ import 'package:rolling_bottom_bar/rolling_bottom_bar.dart';
 import 'package:rolling_bottom_bar/rolling_bottom_bar_item.dart';
 import 'pages/addPage.dart';
 import 'pages/map.dart';
+import 'package:reefs_nav/view/widget/navigation/NavBar.dart';
 
 class HomeNavPage extends StatefulWidget {
   const HomeNavPage({Key? key}) : super(key: key);
@@ -23,6 +24,9 @@ class _HomeNavPageState extends State<HomeNavPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      endDrawer: NavBar(),
+      floatingActionButton: DrawerTrigger(),
+      floatingActionButtonLocation: FloatingActionButtonLocation.endTop,
       body: PageView(
         controller: _controller,
         children: const <Widget>[

@@ -34,7 +34,7 @@ class MyTranslation extends Translations {
           "27": "تعديل الصفحة الشخصية",
           "28": "الصفحة الشخصية",
           "29": "التحقق الرمز",
-          "30": "الرجاء ادخال الرموز المرسلة لايميلك",
+          "30": "الرجاء ادخال الرمز المرسل لايميلك",
         },
         "English": {
           "1": "Choose Language",
@@ -73,8 +73,6 @@ class MyTranslation extends Translations {
           "33": "Confirm New Password",
           "34": "Reset Your Password",
           "35": "",
-
-
         }
       };
 }

@@ -1,12 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_map/flutter_map.dart';
-import 'package:geolocator/geolocator.dart';
 import 'package:latlong2/latlong.dart';
-import 'package:provider/provider.dart';
+import 'package:geolocator/geolocator.dart';
 import 'package:reefs_nav/core/services/fetch_location.dart';
 import 'package:reefs_nav/core/services/tileManager/TileProviderModel.dart';
-import 'package:reefs_nav/core/services/tileManager/local_tile_provider.dart';
 import 'package:reefs_nav/core/services/tileManager/store_tiles.dart';
+import 'package:reefs_nav/core/services/tileManager/cached_network_tiles.dart';
 
 class MapPage extends StatefulWidget {
   const MapPage({Key? key}) : super(key: key);
@@ -24,8 +23,8 @@ class _MapPageState extends State<MapPage> {
   void initState() {
     super.initState();
     mapController = MapController();
-    tileManager = TileManager();
-    tileProviderModel = Provider.of<TileProviderModel>(context, listen: false);
+    //tileManager = TileManager();
+    // tileProviderModel = Provider.of<TileProviderModel>(context, listen: false);
     _fetchCurrentLocation();
   }
 
@@ -42,21 +41,20 @@ class _MapPageState extends State<MapPage> {
 
   @override
   Widget build(BuildContext context) {
-    final localTileProvider = LocalTileProvider(
-        tileManager,
-        "https://api.mapbox.com/styles/v1/yorhaether/clrnqwwd9006g01peerp97p8m/tiles/256/{z}/{x}/{y}@2x?access_token=pk.eyJ1IjoieW9yaGFldGhlciIsImEiOiJjbHJ4ZjI4ajQwdXZ6Mmp0a3pzZmlxaTloIn0.yiGEwb2lvrqZRFB1QixSYw",
-        tileProviderModel);
+    ;
 
     return Scaffold(
       body: FlutterMap(
         mapController: mapController,
         options: MapOptions(
-          //initialCenter: currentLocation ??
-          //  LatLng(20.0, 38.0), // Initial center of the map
+          initialCenter: currentLocation ??
+              LatLng(21.54, 39.16), // Initial center of the map
           initialZoom: 15.0, // Initial zoom level
         ), // MapOptions
         children: [
           TileLayer(
+            tileProvider: CachedNetworkTileProvider(
+                "https://api.mapbox.com/styles/v1/yorhaether/clrnqwwd9006g01peerp97p8m/tiles/256/{z}/{x}/{y}@2x?access_token=pk.eyJ1IjoieW9yaGFldGhlciIsImEiOiJjbHJ4ZjI4ajQwdXZ6Mmp0a3pzZmlxaTloIn0.yiGEwb2lvrqZRFB1QixSYw"),
             urlTemplate:
                 'https://api.mapbox.com/styles/v1/yorhaether/clrnqwwd9006g01peerp97p8m/tiles/256/{z}/{x}/{y}@2x?access_token=pk.eyJ1IjoieW9yaGFldGhlciIsImEiOiJjbHJ4ZjI4ajQwdXZ6Mmp0a3pzZmlxaTloIn0.yiGEwb2lvrqZRFB1QixSYw',
             additionalOptions: const {
@@ -64,7 +62,7 @@ class _MapPageState extends State<MapPage> {
                   'pk.eyJ1IjoieW9yaGFldGhlciIsImEiOiJjbHJ4ZjI4ajQwdXZ6Mmp0a3pzZmlxaTloIn0.yiGEwb2lvrqZRFB1QixSYw',
               'id': 'yorhaether.6vwpkduq',
             },
-            tileProvider: localTileProvider,
+            // tileProvider: localTileProvider,
           ),
           MarkerLayer(
             markers: [
